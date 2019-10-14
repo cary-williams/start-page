@@ -1,2 +1,14 @@
-version: 0.2
+version: 0.3
+
+phases:
+  install:
+    runtime-versions:
+        php: 7.3
+  build:
+    commands:
+      - php --version
+artifacts:
+  files:
+    -  README.md
+    -  LICENSE
 

@@ -5,7 +5,7 @@ phases:
     runtime-versions:
         php: 7.3
       commands:
-      - aws s3 sync . s3://mq-my-static-bucket --delete
+      - aws s3 sync . s3://startpage.pinebeltpc.com --delete
   build:
     commands:
       - php --version

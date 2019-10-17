@@ -45,10 +45,10 @@ function padNumber(size, num) {
 }
 
 function ClockComp(elem, date) {
-    var hh = padNumber(2, date.getHours())
+    var hh = padNumber(2, date.getUTCHours())
     var mm = padNumber(2, date.getMinutes())
 
-    elem.innerHTML = hh + ':' + mm;
+    elem.innerHTML = hh + ':' + mm + ' UTC';
 }
 
 function DateComp(elem, date) {

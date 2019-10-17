@@ -52,13 +52,14 @@ function ClockComp(elem, date) {
 }
 
 function DateComp(elem, date) {
-    var dow = DAYS[date.getDay()]
+    var dow = DAYS[date.getUTCDay()]
     var dd = padNumber(2, date.getUTCDate())
     var mm = padNumber(2, date.getUTCMonth() + 1)
     var yy = padNumber(4, date.getUTCFullYear())
 
     elem.innerHTML = dow + ' ' + mm + '-' + dd + '-' + yy
 }
+
 
 function timer() {
     var now = new Date()

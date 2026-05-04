@@ -1,263 +1,341 @@
-<!DOCTYPE html>
-<html>
-
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width/n \ninitial-width=1" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iSeatz Start Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 </head>
+<body>
 
-<body class="nojs">
-    <div id="top-header">
-        <div id="header-cont">
-            <div id="analog-clock">
-                <canvas id="analog-clock-canvas" width="118" height="118"></canvas>
-            </div>
-            <div id="digital-clock">
-                <div id="clock"></div>
-                <div id="date"></div> 
-            </div>
-        </div>
+<header>
+  <div class="logo">i<span class="brand">Seatz</span></div>
+  <div class="divider"></div>
+  <div class="search-wrap">
+    <svg class="search-icon" aria-hidden="true" data-lucide="search"></svg>
+    <input id="search" type="text" placeholder="Search links..." autocomplete="off" aria-label="Search links" />
+  </div>
+  <div class="header-right">
+    <div class="kbd-hint">press <kbd>/</kbd> to search</div>
+    <div id="clock" aria-live="polite" aria-label="Current time"></div>
+  </div>
+</header>
+
+<main id="grid">
+
+  <section class="section theme-gold" aria-label="Communication links">
+    <div class="section-header">
+      <div class="section-icon" aria-hidden="true"><i data-lucide="message-circle"></i></div>
+      <span class="section-title">Communication</span>
+      <span class="section-count">6</span>
     </div>
-    <header id="sticky-header">
-        <form class="shadow-box" method="GET" action="https://duckduckgo.com/" autocomplete="off">
-            <input id="searchbox" type="text" name="q" placeholder="Search">
-        </form>
-    </header>
-    <main>
-        <section>
-            <div class="shawdow-box nav-wrapper">
-                <h1>Tools</h1>
-                <nav>
-                    <a href="https://console.jumpcloud.com">
-		                <img src="https://jumpcloud.com/wp-content/uploads/2019/01/favicon-180x180.png" alt="Jump Cloud">
-		                <span>JumpCloud</span>
-                        </a>
-                        <a href="https://console.jumpcloud.com/login/admin">
-                            <img src="https://jumpcloud.com/wp-content/uploads/2019/01/favicon-180x180.png" alt="Jump Cloud">
-                            <span>JC Admin</span>
-                        </a>                        
-                    
-                    <a href="https://sso.jumpcloud.com/saml2/openai">
-                        <img src="https://chatgpt.com/favicon.ico" alt="ChatGPT">
-                        <span>ChatGPT</span>
-                    </a>
-                    <a href="https://sso.jumpcloud.com/saml2/lucidchart">
-                        <img src="https://lucid.app/favicon.ico" alt="Lucidchart">
-                        <span>LucidChart</span>
-                    </a>
-                    <a href="https://sso.jumpcloud.com/saml2/tableau">
-                        <img src="https://www.tableau.com/favicon.ico" alt="Tableau">
-                        <span>Tableau</span>
-                    </a>
-                </nav>
-            </div>
-        </section>
-        <section>
-            <div class="shawdow-box nav-wrapper">
-                <h1>Security</h1>
-                <nav>
-                    <a href="https://dash.cloudflare.com">
-                        <img src="https://dash.cloudflare.com/favicon.ico" alt="CloudFlare">
-                        <span>CloudFlare</span>
-                    </a>
-                    <a href="https://sso.jumpcloud.com/saml2/tenableio">
-                        <img src="https://www.tenable.com/sites/all/themes/tenablefourteen/img/favicons/favicon-16x16.png" alt="Tenable">
-                        <span>Tenable</span>
-                    </a>
-                    <a href="https://sso.jumpcloud.com/saml2/knowbe4">
-                        <img src="http://cdn2.hubspot.net/hubfs/241394/x.png" alt="knowbe4">
-                        <span>KnowBe4</span>
-                    </a>
-                    <a href="https://central.sophos.com/manage/dashboard">
-                        <img src="https://www.sophos.com/favicon.ico" alt="Sophos">
-                        <span>Sophos</span>
-                    </a>
-                </nav>
-            </div>
-        </section>
+    <div class="links">
+      <a class="link-item" href="https://mail.google.com" target="_blank" rel="noopener" aria-label="Gmail - Open Gmail inbox">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="mail"></i></span>
+        <span class="link-text">Gmail</span>
+      </a>
+      <a class="link-item" href="https://calendar.google.com/calendar/render#main_7%7Ccustom/n" target="_blank" rel="noopener" aria-label="Google Calendar">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="calendar-days"></i></span>
+        <span class="link-text">Google Calendar</span>
+      </a>
+      <a class="link-item" href="https://sso.jumpcloud.com/saml2/slack" target="_blank" rel="noopener" aria-label="Slack via JumpCloud SSO">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="hash"></i></span>
+        <span class="link-text">Slack</span>
+      </a>
+      <a class="link-item" href="https://admin.google.com/AdminHome?fral=1" target="_blank" rel="noopener" aria-label="Google Workspace Admin Console">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="settings-2"></i></span>
+        <span class="link-text">Google Workspace Admin</span>
+      </a>
+      <a class="link-item" href="https://iseatz.jira.com/servicedesk/customer/portals" target="_blank" rel="noopener" aria-label="ISD Service Desk portal">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="headphones"></i></span>
+        <span class="link-text">ISD Service Desk</span>
+      </a>
+      <a class="link-item" href="https://app.hubspot.com/email/4857126/manage/state/all" target="_blank" rel="noopener" aria-label="HubSpot - Security newsletter management">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="newspaper"></i></span>
+        <span class="link-text">HubSpot Newsletter</span>
+      </a>
+    </div>
+  </section>
 
-        <section>
-            <div class="shawdow-box nav-wrapper">
-                <h1>Compliance</h1>
-                <nav>  
-                    <a href="https://sso.jumpcloud.com/saml2/saml2">
-                        <img src="https://app.drata.com/favicon.ico" alt="Drata">
-                        <span>Drata</span>
-                    </a>  
-                    <a href="https://iseatz-lw.lacework.net/ui/investigation/Dashboard">
-                        <img src="https://www.lacework.com/favicon.ico" alt="Lacework">
-                        <span>Lacwork</span>
-                    </a>                         
-                </nav>
-            </div>
-        </section>                    
-                    
-        <section>
-            <div class="shadow-box nav-wrapper">
-                <h1>Tickets</h1>
-                <nav>
-                    <a href="https://iseatz.jira.com/jira/software/c/projects/SC/boards/557">
-                        <img src="https://cdn2.hubspot.net/hubfs/4857126/iseatz-favicon-white.png" alt="SecOPs">
-                        <span>SecOps Kanban</span>
-                    </a>
-                    <a href="https://iseatz.jira.com/jira/software/c/projects/ITI/boards/623/">
-                        <img src="https://cdn2.hubspot.net/hubfs/4857126/iseatz-favicon-white.png" alt="ITI">
-                        <span>ITI Kanban</span>
-                    </a>                   
-                    <a href="https://sso.jumpcloud.com/saml2/servicenow-prod">
-                        <img src="https://iseatz.service-now.com/favicon.ico" alt="ServiceNow">
-                        <span>ServiceNow</span>
-                    </a>
-                    <a href="https://trello.com/b/JnriGQQw/fte-onboarding-process">
-                        <img src="https://trello.com/favicon.ico" alt="TrelloOnboarding">
-                        <span>Trello-Onboard</span>
-                    </a>     
-                    <a href="https://datastudio.google.com/reporting/1DXLohOQBnFQMnMicco_Vgr7FPGZRFKvt">
-                        <img src="https://www.gstatic.com/analytics-suite/header/suite/v2/ic_data_studio.svg" alt="Vulnerabilities">
-                        <span>Open Vulnerabilities</span>
-                      </a>               
-                </nav>
-            </div>
-        </section>
-          
-        <section>
-            <div class="shadow-box nav-wrapper">
-                <h1>Communication</h1>
-                <nav>
-                    <a href="https://mail.google.com">
-                        <img src="https://www.google.com/a/cpanel/iseatz.com/images/favicon.ico" alt="gmail">
-                        <span>Gmail</span>
-                    </a>
-                    <a href="https://admin.google.com/AdminHome?fral=1">
-                        <img src="https://ssl.gstatic.com/apps/cpanel/resources/logo/adminconsole_favicon.png" alt="gsuites">
-                        <span>G Suites Admin</span>
-                    </a>
-                    <a href="https://sso.jumpcloud.com/saml2/slack">
-                        <img src="https://a.slack-edge.com/cebaa/img/ico/favicon.ico" alt="slack">
-                        <span>IZ Slack</span>
-                    </a>
-                    <a href="https://calendar.google.com/calendar/render#main_7%7Ccustom/n \n4">
-                        <img src="https://calendar.google.com/googlecalendar/images/favicon_v2014_19.ico" alt="calendar">
-                        <span>Calendar</span>
-                    </a>
-                    <a href="https://iseatz.jira.com/servicedesk/customer/portals">
-                        <img src="https://cdn2.hubspot.net/hubfs/4857126/iseatz-favicon-white.png" alt="ISD">
-                        <span>ISD Boards</span>
-                    </a>
-                </a>
-                </nav>
-            </div>
-        </section>
+  <section class="section theme-gold" aria-label="AI and Productivity links">
+    <div class="section-header">
+      <div class="section-icon" aria-hidden="true"><i data-lucide="cpu"></i></div>
+      <span class="section-title">AI &amp; Productivity</span>
+      <span class="section-count">6</span>
+    </div>
+    <div class="links">
+      <a class="link-item" href="https://sso.jumpcloud.com/saml2/anthropicclaude" target="_blank" rel="noopener" aria-label="Claude AI via JumpCloud SSO">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="sparkles"></i></span>
+        <span class="link-text">Claude</span>
+      </a>
+      <a class="link-item" href="https://sso.jumpcloud.com/saml2/openai" target="_blank" rel="noopener" aria-label="ChatGPT via JumpCloud SSO">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="bot"></i></span>
+        <span class="link-text">ChatGPT</span>
+      </a>
+      <a class="link-item" href="https://n8n.iseatz.com" target="_blank" rel="noopener" aria-label="n8n workflow automation">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="workflow"></i></span>
+        <span class="link-text">n8n Automation</span>
+      </a>
+      <a class="link-item" href="https://sso.jumpcloud.com/saml2/lucidchart" target="_blank" rel="noopener" aria-label="LucidChart diagramming via JumpCloud SSO">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="pen-tool"></i></span>
+        <span class="link-text">LucidChart</span>
+      </a>
+      <a class="link-item" href="https://sso.jumpcloud.com/saml2/tableau" target="_blank" rel="noopener" aria-label="Tableau analytics via JumpCloud SSO">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="bar-chart-2"></i></span>
+        <span class="link-text">Tableau</span>
+      </a>
+      <a class="link-item" href="https://datastudio.google.com/reporting/1DXLohOQBnFQMnMicco_Vgr7FPGZRFKvt" target="_blank" rel="noopener" aria-label="Open Vulnerabilities report in Google Data Studio">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="pie-chart"></i></span>
+        <span class="link-text">Open Vulnerabilities Report</span>
+      </a>
+    </div>
+  </section>
 
-        <section>
-            <div class="shadow-box nav-wrapper">
-                <h1>Code</h1>
-                <nav>
-                        <a href="https://bitbucket.org/iseatz/">
-                            <img src="https://bitbucket.org/favicon.ico" alt="BitBucket">
-                            <span>BitBucket</span>
-                        </a>
-                    <a href="https://github.com/">
-                        <img src="https://github.com/favicon.ico" alt="github">
-                        <span>Github</span>
-                    </a>
-                    
-                </nav>
-            </div>
-        </section>
-        <section>
-                <div class="shadow-box nav-wrapper">
-                    <h1>HR</h1>
-                    <nav>
-                        <a href="https://iseatz.helloteam.com">
-                            <img src="https://iseatz.helloteam.com/assets/images/favicon-16x16.png" alt="HelloTeam">
-                            <span>Hello Team</span>
-                        </a>
-                        <a href="https://workforcenow.adp.com">
-                            <img src="https://workforcenow.adp.com/favicon.ico" alt="ADP">
-                            <span>ADP</span>
-                        </a>
-                        <a href="https://iseatz-1edfa.pingboard.com/org_chart">
-                            <img src="https://pingboard.com/assets/favicon-b4e88c0b8fbf7b8c423a53df9f6639a09b5fbfcaacba0004963e71bc78315a06.ico">
-                            <span>Pingboard</span>
-                        </a>
-                        <a href="https://iseatz.latticehq.com/">
-                            <img src="https://iseatz.latticehq.com/favicon-32x32.png">
-                            <span>Lattice</span>
-                        </a>
-                    </nav>
-                </div>
-            </section>
+  <section class="section theme-red" aria-label="Security and Compliance links">
+    <div class="section-header">
+      <div class="section-icon" aria-hidden="true"><i data-lucide="shield-alert"></i></div>
+      <span class="section-title">Security &amp; Compliance</span>
+      <span class="section-count">6</span>
+    </div>
+    <div class="links">
+      <a class="link-item" href="https://dash.cloudflare.com" target="_blank" rel="noopener" aria-label="Cloudflare dashboard">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="cloud"></i></span>
+        <span class="link-text">Cloudflare</span>
+      </a>
+      <a class="link-item" href="https://central.sophos.com/manage/dashboard" target="_blank" rel="noopener" aria-label="Sophos endpoint security dashboard">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="scan-line"></i></span>
+        <span class="link-text">Sophos</span>
+      </a>
+      <a class="link-item" href="https://sso.jumpcloud.com/saml2/tenableio" target="_blank" rel="noopener" aria-label="Tenable.io vulnerability management via JumpCloud SSO">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="radar"></i></span>
+        <span class="link-text">Tenable.io</span>
+      </a>
+      <a class="link-item" href="https://sso.jumpcloud.com/saml2/knowbe4" target="_blank" rel="noopener" aria-label="KnowBe4 security awareness training via JumpCloud SSO">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="graduation-cap"></i></span>
+        <span class="link-text">KnowBe4</span>
+      </a>
+      <a class="link-item" href="https://sso.jumpcloud.com/saml2/saml2" target="_blank" rel="noopener" aria-label="Drata compliance automation via JumpCloud SSO">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="clipboard-check"></i></span>
+        <span class="link-text">Drata</span>
+      </a>
+      <a class="link-item" href="https://iseatz-lw.lacework.net/ui/investigation/Dashboard" target="_blank" rel="noopener" aria-label="Lacework cloud security dashboard">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="search"></i></span>
+        <span class="link-text">Lacework</span>
+      </a>
+    </div>
+  </section>
 
-            <section>
-                <div class="shadow-box nav-wrapper">
-                    <h1>Documentation</h1>
-                    <nav>
-                        <a href="https://iseatz.jira.com/wiki/spaces/OPS/pages/597622821/iSeatz+IP+s">
-                            <img src="https://www.atlassian.com/favicon-16x16.png" alt="Confluence">
-                            <span>iSeatz IP's</span>
-                        </a>
-                        <a href="http://pci.iseatz.com">
-                            <img src="https://cdn2.hubspot.net/hubfs/4857126/iseatz-favicon-white.png" alt="pci">
-                            <span>PCI Docs</span>
-                        </a>
-                        <a href="https://iseatz.jira.com/wiki/spaces/ITSD/overview">
-                            <img src="https://www.atlassian.com/favicon-16x16.png" alt="Confluence">
-                            <span>IT Docs</span>
-                            </a>
-                    </nav>
-                </div>
-            </section>
-            <section>
-                <div class="shadow-box nav-wrapper">
-                    <h1>Logs</h1>
-                    <nav>
-                        <a href="https://sso.jumpcloud.com/saml2/sumologic">
-                            <img src="https://www.sumologic.com/favicon.ico" alt="SumoOps">
-                            <span>Sumo - Ops</span>
-                        </a>
-                        <a href="https://sso.jumpcloud.com/saml2/izsumo">
-                            <img src="https://www.sumologic.com/favicon.ico" alt="Sumo">
-                            <span>Sumo - IZ</span>
-                        </a>
-                        <a href="https://app.datadoghq.com/account/login/id/OCT4Rk">
-                            <img src="https://app.datadoghq.com/favicon.ico" alt="datadog">
-                            <span>DataDog</span>
-                        </a>
-                        <a href="https://slog-view-dark.iseatz.com/">
-                            <img src="https://cdn2.hubspot.net/hubfs/4857126/iseatz-favicon-white.png" alt="slogs">
-                            <span>Prod Slogs</span>
-                        </a>
-                    </nav>
-                </div>
-            </section>
-        <section>
-            <div class="shadow-box nav-wrapper">
-                <h1>CI/CD</h1>
-                <nav>  
-                    <a href="https://sso.jumpcloud.com/saml2/jfrog">
-                        <img src="https://media.jfrog.com/wp-content/uploads/2017/08/20132433/icon-artifactory-1.png" alt="JFrog">
-                        <span>Jfrog</span>
-                    </a>          
-                </nav>
-            </div>
-        </section>
-        <section>
-            <div class="shadow-box nav-wrapper">
-                <h1>AWS</h1>
-                <nav>
-                    <a href="https://iseatz.awsapps.com/start">
-                        <img src="https://us-east-1.signin.aws.amazon.com/favicon.ico" alt="aws">
-                        <span>Control Tower</span>
-                    </a>
-                </nav>
-            </div>
-        </section>
-    </main>
+  <section class="section theme-gold" aria-label="Ticketing and Project Management links">
+    <div class="section-header">
+      <div class="section-icon" aria-hidden="true"><i data-lucide="clipboard-list"></i></div>
+      <span class="section-title">Ticketing &amp; Projects</span>
+      <span class="section-count">4</span>
+    </div>
+    <div class="links">
+      <a class="link-item" href="https://sso.jumpcloud.com/saml2/servicenow-prod" target="_blank" rel="noopener" aria-label="ServiceNow ITSM via JumpCloud SSO">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="circle-dot"></i></span>
+        <span class="link-text">ServiceNow</span>
+      </a>
+      <a class="link-item" href="https://iseatz.jira.com/jira/software/c/projects/SC/boards/557" target="_blank" rel="noopener" aria-label="SecOps Kanban board in Jira">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="kanban"></i></span>
+        <span class="link-text">SecOps Kanban</span>
+      </a>
+      <a class="link-item" href="https://iseatz.jira.com/jira/software/c/projects/ITI/boards/623/" target="_blank" rel="noopener" aria-label="ITI Kanban board in Jira">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="kanban"></i></span>
+        <span class="link-text">ITI Kanban</span>
+      </a>
+      <a class="link-item" href="https://trello.com/b/JnriGQQw/fte-onboarding-process" target="_blank" rel="noopener" aria-label="FTE Onboarding process board on Trello">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="layout-dashboard"></i></span>
+        <span class="link-text">FTE Onboarding (Trello)</span>
+      </a>
+    </div>
+  </section>
 
-    <script src="index.js"></script>
+  <section class="section theme-gold" aria-label="Code and DevOps links">
+    <div class="section-header">
+      <div class="section-icon" aria-hidden="true"><i data-lucide="terminal"></i></div>
+      <span class="section-title">Code &amp; DevOps</span>
+      <span class="section-count">4</span>
+    </div>
+    <div class="links">
+      <a class="link-item" href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub source control">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="github"></i></span>
+        <span class="link-text">GitHub</span>
+      </a>
+      <a class="link-item" href="https://bitbucket.org/iseatz/" target="_blank" rel="noopener" aria-label="Bitbucket iSeatz repositories">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="git-branch"></i></span>
+        <span class="link-text">Bitbucket</span>
+      </a>
+      <a class="link-item" href="https://sso.jumpcloud.com/saml2/jfrog" target="_blank" rel="noopener" aria-label="JFrog Artifactory artifact repository via JumpCloud SSO">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="package"></i></span>
+        <span class="link-text">JFrog Artifactory</span>
+      </a>
+      <a class="link-item" href="https://iseatz.awsapps.com/start" target="_blank" rel="noopener" aria-label="AWS Control Tower account access">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="cloud-cog"></i></span>
+        <span class="link-text">AWS Control Tower</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section theme-red" aria-label="Monitoring and Logs links">
+    <div class="section-header">
+      <div class="section-icon" aria-hidden="true"><i data-lucide="activity"></i></div>
+      <span class="section-title">Monitoring &amp; Logs</span>
+      <span class="section-count">5</span>
+    </div>
+    <div class="links">
+      <a class="link-item" href="https://app.datadoghq.com/account/login/id/OCT4Rk" target="_blank" rel="noopener" aria-label="Datadog-Main monitoring dashboard">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="monitor-dot"></i></span>
+        <span class="link-text">Datadog-Main</span>
+      </a>
+      <a class="link-item" href="https://app.datadoghq.com/account/login/id/30491c20-29f0-11ed-b820-da7ad0900002?force_authn=t" target="_blank" rel="noopener" aria-label="Datadog-LXP monitoring dashboard">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="monitor-dot"></i></span>
+        <span class="link-text">Datadog-LXP</span>
+      </a>
+      <a class="link-item" href="https://sso.jumpcloud.com/saml2/sumologic" target="_blank" rel="noopener" aria-label="Sumo Logic Ops log management via JumpCloud SSO">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="radio-tower"></i></span>
+        <span class="link-text">Sumo Logic (Ops)</span>
+      </a>
+      <a class="link-item" href="https://sso.jumpcloud.com/saml2/izsumo" target="_blank" rel="noopener" aria-label="Sumo Logic iSeatz log management via JumpCloud SSO">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="radio-tower"></i></span>
+        <span class="link-text">Sumo Logic (iSeatz)</span>
+      </a>
+      <a class="link-item" href="https://slog-view-dark.iseatz.com/" target="_blank" rel="noopener" aria-label="Production slow logs viewer">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="scroll-text"></i></span>
+        <span class="link-text">Prod Slogs</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section theme-gold" aria-label="Documentation links">
+    <div class="section-header">
+      <div class="section-icon" aria-hidden="true"><i data-lucide="book-open"></i></div>
+      <span class="section-title">Documentation</span>
+      <span class="section-count">3</span>
+    </div>
+    <div class="links">
+      <a class="link-item" href="https://iseatz.jira.com/wiki/spaces/ITSD/overview" target="_blank" rel="noopener" aria-label="IT Documentation in Confluence">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="file-text"></i></span>
+        <span class="link-text">IT Docs (Confluence)</span>
+      </a>
+      <a class="link-item" href="https://iseatz.jira.com/wiki/spaces/OPS/pages/597622821/iSeatz+IP+s" target="_blank" rel="noopener" aria-label="iSeatz IP address list in Confluence">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="network"></i></span>
+        <span class="link-text">iSeatz IP Addresses</span>
+      </a>
+      <a class="link-item" href="http://pci.iseatz.com" target="_blank" rel="noopener" aria-label="PCI compliance documentation">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="file-lock-2"></i></span>
+        <span class="link-text">PCI Docs</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section theme-gold" aria-label="HR and People links">
+    <div class="section-header">
+      <div class="section-icon" aria-hidden="true"><i data-lucide="users"></i></div>
+      <span class="section-title">HR &amp; People</span>
+      <span class="section-count">5</span>
+    </div>
+    <div class="links">
+      <a class="link-item" href="https://iseatz.helloteam.com" target="_blank" rel="noopener" aria-label="HelloTeam HR platform">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="handshake"></i></span>
+        <span class="link-text">HelloTeam</span>
+      </a>
+      <a class="link-item" href="https://workforcenow.adp.com" target="_blank" rel="noopener" aria-label="ADP Workforce Now payroll and HR">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="credit-card"></i></span>
+        <span class="link-text">ADP Workforce Now</span>
+      </a>
+      <a class="link-item" href="https://iseatz-1edfa.pingboard.com/org_chart" target="_blank" rel="noopener" aria-label="Pingboard organization chart">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="network"></i></span>
+        <span class="link-text">Pingboard Org Chart</span>
+      </a>
+      <a class="link-item" href="https://iseatz.latticehq.com/" target="_blank" rel="noopener" aria-label="Lattice performance management">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="star"></i></span>
+        <span class="link-text">Lattice</span>
+      </a>
+      <a class="link-item" href="https://sso.jumpcloud.com/saml2/greenhouse" target="_blank" rel="noopener" aria-label="Greenhouse recruiting via JumpCloud SSO">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="sprout"></i></span>
+        <span class="link-text">Greenhouse</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section theme-red" aria-label="Identity and Access Management links">
+    <div class="section-header">
+      <div class="section-icon" aria-hidden="true"><i data-lucide="key-round"></i></div>
+      <span class="section-title">Identity &amp; Access</span>
+      <span class="section-count">2</span>
+    </div>
+    <div class="links">
+      <a class="link-item" href="https://console.jumpcloud.com" target="_blank" rel="noopener" aria-label="JumpCloud console">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="shield"></i></span>
+        <span class="link-text">JumpCloud</span>
+      </a>
+      <a class="link-item" href="https://console.jumpcloud.com/login/admin" target="_blank" rel="noopener" aria-label="JumpCloud Admin login">
+        <span class="link-icon" aria-hidden="true"><i data-lucide="shield-check"></i></span>
+        <span class="link-text">JumpCloud Admin</span>
+      </a>
+    </div>
+  </section>
+
+  <div id="no-results" role="status">No links match your search.</div>
+
+</main>
+
+<footer>
+  <span>i</span>Seatz Internal Start Page
+</footer>
+
+<script>
+  lucide.createIcons({ attrs: { 'stroke-width': 1.5 } });
+
+  // Live clock
+  const clock = document.getElementById('clock');
+  function updateClock() {
+    const now = new Date();
+    const ct  = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Chicago' });
+    const utc = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
+    const label = `${ct} CT | ${utc} UTC`;
+    clock.textContent = label;
+    clock.setAttribute('aria-label', 'Current time: ' + label);
+  }
+  updateClock();
+  setInterval(updateClock, 10000);
+
+  // Search
+  const searchInput = document.getElementById('search');
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.trim().toLowerCase();
+    const sections = document.querySelectorAll('.section');
+    let anyVisible = false;
+
+    sections.forEach(sec => {
+      const links = sec.querySelectorAll('a.link-item');
+      let secVisible = false;
+      links.forEach(a => {
+        const match = !q || a.textContent.toLowerCase().includes(q);
+        a.classList.toggle('hidden', !match);
+        if (match) secVisible = true;
+      });
+      sec.classList.toggle('all-hidden', !secVisible);
+      if (secVisible) anyVisible = true;
+    });
+
+    document.getElementById('no-results').style.display = anyVisible ? 'none' : 'block';
+  });
+
+  // Press / to focus search, Escape to blur
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement !== searchInput) {
+      e.preventDefault();
+      searchInput.focus();
+    }
+    if (e.key === 'Escape') searchInput.blur();
+  });
+</script>
+
 </body>
-
 </html>
+

@@ -1,16 +1,7 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-        php: 7.3
-    commands:
-    - aws s3 sync . s3://startpage.pinebeltpc.com --delete
   build:
     commands:
-      - php --version
-artifacts:
-  files:
-    -  README.md
-    -  LICENSE
-
+      - aws s3 sync . s3://startpage.pinebeltpc.com --delete --exclude ".git/*" --exclude "buildspec.yml" --exclude "README.md" --exclude "LICENSE"
+      - aws cloudfront create-invalidation --distribution-id E159WLJOB8SI5S --paths "/*"
